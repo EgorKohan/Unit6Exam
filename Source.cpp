@@ -17,4 +17,5 @@ public:
 
 int main() {
 	cout << "Hello";
+	Student *stu = new Student("Egor", "Kohan");
 }
