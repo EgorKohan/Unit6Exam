@@ -8,5 +8,5 @@ public:
 		this->money = money;
 	}
 
-
+	
 };

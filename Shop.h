@@ -26,6 +26,8 @@ public:
 	
 	string getName() { return name; };
 
+	int getCurrentCountOfParfum() { return currentCountOfParfum; }
+
 	Parfum* getParfumMas() { return parfumMas; }
 
 	void addNewParfum(Parfum newParfum) {
