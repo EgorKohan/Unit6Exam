@@ -7,7 +7,7 @@ class Shop {
 	string name;
 	int countOfParfums;
 	int currentCountOfParfum;
-	Parfum *parfumMas;
+	Parfum* parfumMas;
 public:
 	Shop(string name, int countOfParfums) {
 		this->name = name;
@@ -23,8 +23,10 @@ public:
 		this->currentCountOfParfum = obj.currentCountOfParfum;
 		this->parfumMas = new Parfum(*obj.parfumMas);
 	}
-	
+
 	string getName() { return name; };
+
+	int getCurrentCountOfParfum() { return currentCountOfParfum; }
 
 	Parfum* getParfumMas() { return parfumMas; }
 
@@ -33,5 +35,7 @@ public:
 		parfumMas[currentCountOfParfum] = newParfum;
 		currentCountOfParfum++;
 	}
+
+	
 
 };

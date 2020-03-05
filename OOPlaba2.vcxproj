@@ -131,6 +131,7 @@
     <ClInclude Include="Parfum.h" />
     <ClInclude Include="Person.h" />
     <ClInclude Include="Shop.h" />
+    <ClInclude Include="ShopAction.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
