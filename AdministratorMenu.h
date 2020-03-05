@@ -45,6 +45,7 @@ public:
 			}
 			default:
 				cin.clear();
+				cin.sync();
 				rewind(stdin);
 				cout << "Incorrect input\n";
 				break;

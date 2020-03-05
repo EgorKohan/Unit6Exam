@@ -29,11 +29,19 @@ public:
 	int getCurrentCountOfParfum() { return currentCountOfParfum; }
 
 	Parfum* getParfumMas() { return parfumMas; }
-
+	
+	//need to move to ShopAction
 	void addNewParfum(Parfum newParfum) {
-		if (currentCountOfParfum >= countOfParfums) throw range_error("Array out of bounds");
+		if (newParfum.getCost() == 0) {
+			throw invalid_argument("Empty object");
+		}
+		if (currentCountOfParfum >= countOfParfums) {
+			throw range_error("Array out of bounds");
+		}
 		parfumMas[currentCountOfParfum] = newParfum;
 		currentCountOfParfum++;
 	}
+
+
 
 };

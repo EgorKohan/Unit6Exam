@@ -6,9 +6,10 @@ class Administrator : public Person {
 	Shop *administratorShop;
 public:
 	Administrator(string name, Shop& shop) : Person(name) {
-		this->administratorShop = new Shop(shop);
+		this->administratorShop = &shop;
 	};
 
+	//need to move to AdministratorAction
 	Parfum createNewParfum(){
 		string str;
 		float cost;
@@ -25,10 +26,12 @@ public:
 		}
 		catch (const std::exception& e)
 		{
+			return Parfum();
 			cout << e.what() << endl;
 		}
 	}
 
+	//need to move to AdministratorAction
 	void addProductIntoShop() {
 		try
 		{
@@ -37,6 +40,13 @@ public:
 		catch (const range_error& e)
 		{
 			cout << "Product did't add.\n";
+			cout << e.what() << endl;
+		}
+		catch (const invalid_argument & e)
+		{
+			cout << "Product did't add.\n";
+			rewind(stdin);
+			cin.clear();
 			cout << e.what() << endl;
 		}
 	}
