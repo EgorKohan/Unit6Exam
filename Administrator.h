@@ -41,10 +41,4 @@ public:
 		}
 	}
 
-	void setNewShop(Shop& newShop) {
-		administratorShop = &newShop;
-	}
-
-	string getShopName() { return administratorShop->getName(); }
-
 };
