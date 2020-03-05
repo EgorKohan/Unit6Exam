@@ -7,6 +7,11 @@ class Parfum {
 	float cost;
 	int volume;
 public:
+	Parfum() {
+		cost = 0;
+		volume = 0;
+	}
+
 	Parfum(string name, float cost, int volume) {
 		this->name = name;
 		this->cost = cost;
