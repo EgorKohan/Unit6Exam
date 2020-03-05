@@ -4,6 +4,7 @@
 
 class Administrator : public Person {
 public:
+
 	Parfum createNewParfum() {
 		string str;
 		float cost;
@@ -18,6 +19,14 @@ public:
 	}
 
 	void addProductIntoShop(Shop& shop) {
+		try
+		{
 		shop.addNewParfum(createNewParfum());
+		}
+		catch (const std::exception&)
+		{
+
+		}
 	}
+
 };
