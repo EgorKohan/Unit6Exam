@@ -22,7 +22,7 @@ public:
 	Parfum* getParfumMas() { return parfumMas; }
 
 	void addNewParfum(Parfum newParfum) {
-		if (currentCountOfParfum > countOfParfums) throw range_error("Array out of bounds");
+		if (currentCountOfParfum >= countOfParfums) throw range_error("Array out of bounds");
 		parfumMas[currentCountOfParfum] = newParfum;
 		currentCountOfParfum++;
 	}
