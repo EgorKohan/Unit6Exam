@@ -3,7 +3,11 @@
 #include "Shop.h"
 
 class Administrator : public Person {
+	Shop *administratorShop;
 public:
+	Administrator(string name, Shop& shop) : Person(name) {
+		this->administratorShop = new Shop(shop);
+	};
 
 	Parfum createNewParfum() {
 		string str;
@@ -15,17 +19,25 @@ public:
 		cin >> cost;
 		cout << "Input the volume of parfum: ";
 		cin >> volume;
-		return Parfum(str, cost, volume);
-	}
-
-	void addProductIntoShop(Shop& shop) {
 		try
 		{
-		shop.addNewParfum(createNewParfum());
+			return Parfum(str, cost, volume);
 		}
-		catch (const std::exception&)
+		catch (const std::exception& e)
 		{
+			cout << e.what() << endl;
+		}
+	}
 
+	void addProductIntoShop() {
+		try
+		{
+			administratorShop->addNewParfum(createNewParfum());
+		}
+		catch (const range_error& e)
+		{
+			cout << "Product did't add.\n";
+			cout << e.what() << endl;
 		}
 	}
 

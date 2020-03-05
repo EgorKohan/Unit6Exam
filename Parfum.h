@@ -14,9 +14,9 @@ public:
 
 	Parfum(string name, float cost, int volume) {
 		this->name = name;
-		if (cost <= 0) throw runtime_error("Parfum can't be initialized/\n Cost can't be negative or zero.");
+		if (cost <= 0) throw runtime_error("Parfum can't be initialized.\n Cost can't be negative or zero.");
 		this->cost = cost;
-		if (volume <= 0) throw runtime_error("Parfum can't be initialized/\n Volume can't be negative or zero.");
+		if (volume <= 0) throw runtime_error("Parfum can't be initialized.\n Volume can't be negative or zero.");
 		this->volume = volume;
 	}
 

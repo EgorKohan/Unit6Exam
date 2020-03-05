@@ -17,6 +17,13 @@ public:
 		currentCountOfParfum = 0;
 	}
 
+	Shop(const Shop& obj) {
+		this->name = obj.name;
+		this->countOfParfums = obj.countOfParfums;
+		this->currentCountOfParfum = obj.currentCountOfParfum;
+		this->parfumMas = new Parfum(*obj.parfumMas);
+	}
+	
 	string getName() { return name; };
 
 	Parfum* getParfumMas() { return parfumMas; }
