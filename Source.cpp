@@ -1,17 +1,18 @@
 #include <iostream>
-#include "Parfum.h"
+#include "Shop.h"
 using namespace std;
 
 
 int main() {
-	Parfum parfum("Dior", 105.0f, 100);
+	Shop shop("KPABT", 1);
 	try
 	{
-	parfum.setCost(-5);
+		shop.addNewParfum(Parfum("Dior", 105.0f, 100));
+		shop.addNewParfum(Parfum("Dior", 105.0f, 100));
+		shop.addNewParfum(Parfum("Dior", 105.0f, 100));
 	}
-	catch (const std::exception& e)
+	catch (const std::exception& e )
 	{
-		cout << e.what()  << endl;
+		cout << e.what() << endl;
 	}
-
 }

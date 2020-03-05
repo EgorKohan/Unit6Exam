@@ -1,3 +1,3 @@
 ﻿  Source.cpp
-C:\Users\User\source\repos\OOPlaba2\OOPlaba2\Parfum.h(25,52): warning C4290: спецификация исключений C++ игнорируется, кроме случая, когда указывается, что функция не является __declspec(nothrow)
+C:\Users\User\source\repos\OOPlaba2\OOPlaba2\Parfum.h(27,52): warning C4290: спецификация исключений C++ игнорируется, кроме случая, когда указывается, что функция не является __declspec(nothrow)
   OOPlaba2.vcxproj -> C:\Users\User\source\repos\OOPlaba2\Debug\OOPlaba2.exe
