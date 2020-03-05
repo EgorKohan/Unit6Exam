@@ -9,7 +9,7 @@ public:
 		this->administratorShop = new Shop(shop);
 	};
 
-	Parfum createNewParfum() {
+	Parfum createNewParfum(){
 		string str;
 		float cost;
 		int volume;
@@ -39,6 +39,14 @@ public:
 			cout << "Product did't add.\n";
 			cout << e.what() << endl;
 		}
+	}
+
+	void setNewShop(Shop& newShop) {
+		administratorShop = &newShop;
+	}
+
+	Shop getShop() {
+		return *administratorShop;
 	}
 
 };

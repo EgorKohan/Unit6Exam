@@ -1,4 +1,8 @@
 ﻿  Source.cpp
+C:\Users\User\source\repos\OOPlaba2\OOPlaba2\Parfum.h(15,66): warning C4290: спецификация исключений C++ игнорируется, кроме случая, когда указывается, что функция не является __declspec(nothrow)
 C:\Users\User\source\repos\OOPlaba2\OOPlaba2\Parfum.h(27,52): warning C4290: спецификация исключений C++ игнорируется, кроме случая, когда указывается, что функция не является __declspec(nothrow)
-C:\Users\User\source\repos\OOPlaba2\OOPlaba2\Administrator.h(30): warning C4715: Administrator::createNewParfum: значение возвращается не при всех путях выполнения
-  OOPlaba2.vcxproj -> C:\Users\User\source\repos\OOPlaba2\Debug\OOPlaba2.exe
+C:\Users\User\source\repos\OOPlaba2\OOPlaba2\ShopAction.h(9,1): error C2039: getCurrentCountOfParfum: не является членом "Shop"
+C:\Users\User\source\repos\OOPlaba2\OOPlaba2\Shop.h(6): message : см. объявление "Shop"
+C:\Users\User\source\repos\OOPlaba2\OOPlaba2\ShopAction.h(13,1): error C2039: getCurrentCountOfParfum: не является членом "Shop"
+C:\Users\User\source\repos\OOPlaba2\OOPlaba2\Shop.h(6): message : см. объявление "Shop"
+C:\Users\User\source\repos\OOPlaba2\OOPlaba2\AdministratorMenu.h(21,48): warning C4290: спецификация исключений C++ игнорируется, кроме случая, когда указывается, что функция не является __declspec(nothrow)

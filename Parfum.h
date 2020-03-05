@@ -12,7 +12,7 @@ public:
 		volume = 0;
 	}
 
-	Parfum(string name, float cost, int volume) {
+	Parfum(string name, float cost, int volume) throw(runtime_error){
 		this->name = name;
 		if (cost <= 0) throw runtime_error("Parfum can't be initialized.\n Cost can't be negative or zero.");
 		this->cost = cost;

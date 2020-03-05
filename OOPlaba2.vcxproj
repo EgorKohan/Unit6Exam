@@ -127,7 +127,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Administrator.h" />
+    <ClInclude Include="AdministratorMenu.h" />
     <ClInclude Include="Customer.h" />
+    <ClInclude Include="CustomerAction.h" />
     <ClInclude Include="Parfum.h" />
     <ClInclude Include="Person.h" />
     <ClInclude Include="Shop.h" />

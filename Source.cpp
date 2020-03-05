@@ -1,6 +1,9 @@
 #include <iostream>
 #include "Shop.h"
 #include "Administrator.h"
+#include "Customer.h"
+#include "AdministratorMenu.h"
+
 
 using namespace std;
 
@@ -8,8 +11,8 @@ using namespace std;
 int main() {
 	Shop shop("KPABT", 1);
 	Administrator admin("Egor", shop);
-	admin.addProductIntoShop();
-	admin.addProductIntoShop();
-	admin.addProductIntoShop();
-	admin.addProductIntoShop();
+	AdministratorMenu adminM(admin);
+	adminM.launchAdministratorMenu();
+
+
 }
