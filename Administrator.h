@@ -4,13 +4,15 @@
 
 class Administrator : public Person {
 	Shop *administratorShop;
+
 public:
-	Administrator(string name, Shop& shop) : Person(name) {
-		this->administratorShop = &shop;
+	Administrator(string name, Shop* shop)  throw (domain_error) : Person(name){
+		if(shop == nullptr) throw domain_error("Domain error(Administrator)");
+		this->administratorShop = shop;
 	};
 
 	//need to move to AdministratorAction
-	Parfum createNewParfum(){
+	Parfum* createNewParfum(){
 		string str;
 		float cost;
 		int volume;
@@ -20,15 +22,7 @@ public:
 		cin >> cost;
 		cout << "Input the volume of parfum: ";
 		cin >> volume;
-		try
-		{
-			return Parfum(str, cost, volume);
-		}
-		catch (const std::exception& e)
-		{
-			return Parfum();
-			cout << e.what() << endl;
-		}
+		return new Parfum(str, cost, volume);
 	}
 
 	//need to move to AdministratorAction
@@ -39,20 +33,20 @@ public:
 		}
 		catch (const range_error& e)
 		{
-			cout << "Product did't add.\n";
 			cout << e.what() << endl;
 		}
-		catch (const invalid_argument & e)
+		catch (const invalid_argument & e )
 		{
-			cout << "Product did't add.\n";
-			rewind(stdin);
-			cin.clear();
+			cout << e.what() << endl;
+		}
+		catch (const domain_error& e) {
 			cout << e.what() << endl;
 		}
 	}
 
-	void setNewShop(Shop& newShop) {
-		administratorShop = &newShop;
+	void setNewShop(Shop* newShop) throw(domain_error){
+		if (newShop == nullptr) throw domain_error("Domain error(Administrator)");
+		administratorShop = newShop;
 	}
 
 	Shop getShop() {

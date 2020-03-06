@@ -12,5 +12,6 @@
     <ClInclude Include="Shop.h" />
     <ClInclude Include="CustomerMenu.h" />
     <ClInclude Include="ShopAction.h" />
+    <ClInclude Include="Functions.h" />
   </ItemGroup>
 </Project>

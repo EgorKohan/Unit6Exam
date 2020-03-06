@@ -9,9 +9,9 @@ class Shop {
 	int currentCountOfParfum;
 	Parfum *parfumMas;
 public:
-	Shop(string name, int countOfParfums) {
-		this->name = name;
-		if (countOfParfums < 0) throw length_error("Count of parfums can't be negative.");
+	Shop(string name, int countOfParfums) throw(invalid_argument) {
+		if (countOfParfums < 0) throw invalid_argument("Count of parfums can't be negative.");
+		this->name = Functions::checkWord(name);
 		this->countOfParfums = countOfParfums;
 		parfumMas = new Parfum[countOfParfums];
 		currentCountOfParfum = 0;
@@ -31,17 +31,11 @@ public:
 	Parfum* getParfumMas() { return parfumMas; }
 	
 	//need to move to ShopAction
-	void addNewParfum(Parfum newParfum) {
-		if (newParfum.getCost() == 0) {
-			throw invalid_argument("Empty object");
-		}
-		if (currentCountOfParfum >= countOfParfums) {
-			throw range_error("Array out of bounds");
-		}
-		parfumMas[currentCountOfParfum] = newParfum;
+	void addNewParfum(Parfum* newParfum) throw(range_error, domain_error) {
+		if (newParfum == nullptr) throw domain_error("Domain error");
+		if (currentCountOfParfum >= countOfParfums) throw range_error("Array out of bounds");
+		parfumMas[currentCountOfParfum] = *newParfum;
 		currentCountOfParfum++;
 	}
-
-
 
 };

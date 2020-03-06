@@ -14,11 +14,12 @@ class AdministratorMenu {
 
 public:
 
-	AdministratorMenu(Administrator& admin) {
-		this->admin = &admin;
+	AdministratorMenu(Administrator* admin) throw(domain_error){
+		if (admin == nullptr) throw domain_error("Domain error(Administrator)");
+		this->admin = admin;
 	}
 
-	void launchAdministratorMenu() throw(exception) {
+	void launchAdministratorMenu(){
 		int choise;
 		do
 		{
@@ -36,7 +37,14 @@ public:
 				break;
 			}
 			case 3: {
-				ShopAction::showParfumMas(admin->getShop());
+				try
+				{
+					ShopAction::showParfumMas(admin->getShop());
+				}
+				catch (const std::invalid_argument& e)
+				{
+					cout << e.what() << endl;
+				}
 				break;
 			}
 			case 4: {
@@ -54,7 +62,8 @@ public:
 		} while (choise != 4);
 	}
 
-	void setNewAdmin(Administrator& newAdmin) {
-		admin = &newAdmin;
+	void setNewAdmin(Administrator* newAdmin) throw(domain_error){
+		if (newAdmin == nullptr) throw domain_error("Domain error(AdministratorMenu)");
+		admin = newAdmin;
 	}
 };

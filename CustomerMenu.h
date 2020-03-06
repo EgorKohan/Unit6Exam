@@ -2,7 +2,7 @@
 #include "Customer.h"
 
 class CustomerMenu {
-	Customer *customer;
+	Customer* customer;
 	Shop* customerShop;
 	int displayLaunchInfo() {
 		int choise;
@@ -13,9 +13,10 @@ class CustomerMenu {
 
 public:
 
-	CustomerMenu(Customer& customer, Shop& shop) {
-		this->customer = &customer;
-		this->customerShop = &shop;
+	CustomerMenu(Customer* customer, Shop* shop) throw(domain_error) {
+		if (customer == nullptr || shop == nullptr) throw domain_error("Domain error(CustomerMenu)");
+		this->customer = customer;
+		this->customerShop = shop;
 	}
 
 	void launchCustomerMenu() {
@@ -32,12 +33,15 @@ public:
 				break;
 			}
 			case 2: {
-				customer->buyParfume(*customerShop);
+				customer->buyParfume(customerShop);
 			}
 			case 3: {
 				break;
 			}
 			default: {
+				cin.clear();
+				cin.sync();
+				rewind(stdin);
 				break;
 			}
 			}
